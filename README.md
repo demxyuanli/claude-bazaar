@@ -1,60 +1,35 @@
-# Claude Code Plugin Marketplace Template
+# Claude Bazaar
 
-Create and distribute Claude Code plugins for your team or community. This GitHub template provides everything you need to build a plugin marketplace — from scaffolding and validation to CI/CD automation.
+A bazaar of Claude Code plugins and curiosities.
 
-[![GitHub stars](https://img.shields.io/github/stars/ivan-magda/claude-code-plugin-template?style=social)](https://github.com/ivan-magda/claude-code-plugin-template/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/ivan-magda/claude-code-plugin-template?style=social)](https://github.com/ivan-magda/claude-code-plugin-template/network/members)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Validate Plugins](https://github.com/ivan-magda/claude-code-plugin-template/actions/workflows/validate-plugins.yml/badge.svg)](https://github.com/ivan-magda/claude-code-plugin-template/actions/workflows/validate-plugins.yml)
+[![Validate Plugins](https://github.com/svgsponer/claude-bazaar/actions/workflows/validate-plugins.yml/badge.svg)](https://github.com/svgsponer/claude-bazaar/actions/workflows/validate-plugins.yml)
 
-## Why Use This Template?
+## Installation
 
-- **Skip the boilerplate** — Pre-configured marketplace structure, plugin manifests, and GitHub Actions validation
-- **Full plugin development toolkit** — Commands for scaffolding plugins, adding components (commands, skills, agents, hooks), and validating before release
-- **Team-ready distribution** — Configure automatic marketplace installation for team projects
-- **Best practices built-in** — Comprehensive documentation, examples, and guided workflows
+Add the marketplace to Claude Code:
+
+```bash
+/plugin marketplace add svgsponer/claude-bazaar
+```
+
+Then install plugins:
+
+```bash
+/plugin install plugin-development@claude-bazaar
+```
 
 ## What's Included
 
 | Component | Description |
 |-----------|-------------|
-| **Marketplace Configuration** | `.claude-plugin/marketplace.json` following the [official schema](https://code.claude.com/docs/en/plugin-marketplaces#marketplace-schema) |
 | **Plugin Development Toolkit** | `plugin-development` plugin with 7 slash commands, a `plugin-authoring` skill for ambient guidance, and a reviewer agent |
-| **Example Plugin** | `hello-world` plugin demonstrating proper structure and best practices |
 | **CI/CD Workflows** | GitHub Actions for automated plugin validation on every push and PR |
 | **Documentation** | Complete guides for plugins, hooks, settings, commands, skills, and sub-agents |
 
-## Quick Start
+## Developing Plugins
 
-### 1. Create Your Marketplace
-
-Click **"Use this template"** on GitHub, then clone your new repository:
-
-```bash
-git clone https://github.com/your-org/your-marketplace-name.git
-cd your-marketplace-name
-```
-
-### 2. Customize the Marketplace
-
-Update `.claude-plugin/marketplace.json` with your organization details:
-
-```json
-{
-  "name": "my-team-marketplace",
-  "owner": {
-    "name": "Your Organization",
-    "email": "team@your-org.com"
-  },
-  "metadata": {
-    "description": "A curated collection of Claude Code plugins for our team",
-    "version": "1.0.0"
-  },
-  "plugins": []
-}
-```
-
-### 3. Install the Plugin Development Toolkit
+### Install the Plugin Development Toolkit
 
 ```bash
 # Start Claude Code
@@ -64,10 +39,10 @@ claude
 /plugin marketplace add .
 
 # Install the development toolkit
-/plugin install plugin-development@my-team-marketplace
+/plugin install plugin-development@claude-bazaar
 ```
 
-### 4. Create Your First Plugin
+### Create Your First Plugin
 
 ```bash
 # Scaffold a new plugin
@@ -113,7 +88,6 @@ The `plugin-development` plugin provides these commands:
 │   ├── skills.md                 # Agent skills guide
 │   └── sub-agents.md             # Sub-agent system
 └── plugins/
-    ├── hello-world/              # Example plugin
     └── plugin-development/       # Development toolkit
 ```
 
@@ -124,10 +98,10 @@ Configure automatic marketplace installation for your team by adding `.claude/se
 ```json
 {
   "extraKnownMarketplaces": {
-    "my-team-marketplace": {
+    "claude-bazaar": {
       "source": {
         "source": "github",
-        "repo": "your-org/your-marketplace-name"
+        "repo": "svgsponer/claude-bazaar"
       }
     }
   }
@@ -142,10 +116,10 @@ Once your marketplace is published to GitHub, users can install plugins with:
 
 ```bash
 # Add the marketplace
-/plugin marketplace add your-org/your-marketplace-name
+/plugin marketplace add svgsponer/claude-bazaar
 
 # Install a plugin
-/plugin install plugin-name@your-marketplace-name
+/plugin install plugin-name@claude-bazaar
 ```
 
 ## Local Testing
@@ -154,7 +128,7 @@ Test your plugins before publishing:
 
 ```bash
 # Navigate to your marketplace
-cd your-marketplace-name
+cd claude-bazaar
 
 # Start Claude Code
 claude
@@ -163,8 +137,7 @@ claude
 /plugin marketplace add .
 
 # Install and test a plugin
-/plugin install hello-world@my-team-marketplace
-/hello World
+/plugin install plugin-development@claude-bazaar
 ```
 
 For iterative development:
@@ -172,8 +145,8 @@ For iterative development:
 ```bash
 # After making changes
 /plugin-development:validate
-/plugin uninstall plugin-name@my-team-marketplace
-/plugin install plugin-name@my-team-marketplace
+/plugin uninstall plugin-name@claude-bazaar
+/plugin install plugin-name@claude-bazaar
 ```
 
 ## Uninstalling
@@ -182,10 +155,10 @@ Remove the marketplace and its plugins from Claude Code:
 
 ```bash
 # Remove a specific plugin
-/plugin uninstall plugin-name@my-team-marketplace
+/plugin uninstall plugin-name@claude-bazaar
 
 # Remove the marketplace entirely
-/plugin marketplace remove my-team-marketplace
+/plugin marketplace remove claude-bazaar
 ```
 
 To completely remove, delete the cloned repository directory.
@@ -284,21 +257,11 @@ Add to `.claude-plugin/marketplace.json`:
 - [Plugins Reference](https://code.claude.com/docs/en/plugins-reference) — Technical specifications
 - [Slash Commands](https://code.claude.com/docs/en/slash-commands) — Command development
 
-## Example Plugins
-
-### hello-world
-
-A minimal example demonstrating proper plugin structure:
-
-```bash
-/plugin install hello-world@my-team-marketplace
-/hello World
-# Output: Hello, World! 👋
-```
+## Included Plugins
 
 ### plugin-development
 
-The comprehensive toolkit used throughout this template:
+A comprehensive plugin development toolkit:
 
 - **7 slash commands** for scaffolding and validation
 - **plugin-authoring skill** for ambient guidance
