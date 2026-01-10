@@ -1,0 +1,11 @@
+{
+  "name": "scaffolder",
+  "version": "0.1.0",
+  "description": "Scaffold full-stack projects with local dev, local prod-like test, and remote prod environments using Docker Compose and Traefik",
+  "author": {
+    "name": "svgsponer",
+    "email": "svgsponer@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "keywords": ["scaffold", "docker", "traefik", "environments", "devops", "full-stack"]
+}
