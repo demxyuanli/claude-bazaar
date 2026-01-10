@@ -32,6 +32,18 @@
       "category": "developer-tools",
       "tags": ["scaffold", "docker", "traefik", "devops", "environments"],
       "keywords": ["scaffold", "docker-compose", "traefik", "full-stack", "environments", "devops"]
+    },
+    {
+      "name": "rewrite",
+      "description": "Rewrite rough prompts into clear, specific, well-structured requests that get better results from Claude Code",
+      "version": "0.1.0",
+      "author": {
+        "name": "svgsponer"
+      },
+      "source": "./plugins/rewrite",
+      "category": "productivity",
+      "tags": ["prompt", "productivity", "clarity", "writing"],
+      "keywords": ["prompt", "rewrite", "improve", "clarity", "productivity"]
     }
   ]
 }
