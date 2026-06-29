@@ -1,0 +1,8 @@
+  {
+    "name": "toulmin",
+    "version": "1.0.1",
+    "description": "Toulmin critical argumentation framework — 3-gate verification, adversarial debate, vibe-coding drift detection",
+    "homepage": "https://github.com/demxyuanli/Critical-argument",
+    "repository": "https://github.com/demxyuanli/Critical-argument",
+    "archive": "https://github.com/demxyuanli/Critical-argument/releases/download/v1.0.1/toulmin-1.0.1.zip"
+  }
